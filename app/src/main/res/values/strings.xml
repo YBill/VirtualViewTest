@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">VirtualViewTest</string>
+
+    <string name="refresh">Refresh</string>
+</resources>
