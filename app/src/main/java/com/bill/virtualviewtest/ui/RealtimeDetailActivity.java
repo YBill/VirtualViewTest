@@ -33,7 +33,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class DetailActivity extends AppCompatActivity {
+public class RealtimeDetailActivity extends AppCompatActivity {
 
     private LinearLayout mLinearLayout;
 
@@ -44,7 +44,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_realtime_detail);
         mLinearLayout = findViewById(R.id.container);
 
         sVafContext = ((MyApplication) getApplication()).getVafContext();

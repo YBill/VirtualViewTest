@@ -1,4 +1,4 @@
-package com.bill.virtualviewtest.ui;
+package com.bill.virtualviewtest.auxiliary;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;

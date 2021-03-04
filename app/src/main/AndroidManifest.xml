@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.DetailActivity"></activity>
-        <activity android:name=".ui.ListActivity" />
+        <activity android:name=".ui.LocalParserActivity" />
+        <activity android:name=".ui.RealtimeDetailActivity" />
+        <activity android:name=".ui.RealtimeListActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

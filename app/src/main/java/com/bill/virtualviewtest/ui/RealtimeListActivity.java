@@ -31,7 +31,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class ListActivity extends AppCompatActivity {
+public class RealtimeListActivity extends AppCompatActivity {
 
     private RecyclerView mRv;
     private ListAdapter mAdapter;
@@ -39,7 +39,7 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_realtime_list);
         initView();
         getListData();
     }
@@ -156,7 +156,7 @@ public class ListActivity extends AppCompatActivity {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(mContext, DetailActivity.class);
+                        Intent intent = new Intent(mContext, RealtimeDetailActivity.class);
                         intent.putExtra("name", name);
                         mContext.startActivity(intent);
                     }

@@ -3,7 +3,7 @@ package com.bill.virtualviewtest;
 import android.app.Application;
 import android.content.Context;
 
-import com.bill.virtualviewtest.ui.ImageTarget;
+import com.bill.virtualviewtest.auxiliary.ImageTarget;
 import com.bill.virtualviewtest.util.Utils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
