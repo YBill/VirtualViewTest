@@ -1,5 +1,6 @@
 package com.bill.virtualviewtest.ui;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
@@ -154,7 +155,15 @@ public class NetLoadActivity extends AppCompatActivity {
             }
         }
 
-        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE).show();
+        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE)
+                .setTextColor(Color.RED)
+                .setAction("Close", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                })
+                .show();
 
     }
 
@@ -255,7 +264,15 @@ public class NetLoadActivity extends AppCompatActivity {
             }
         }
 
-        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE).show();
+        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE)
+                .setTextColor(Color.YELLOW)
+                .setAction("Close", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                })
+                .show();
 
     }
 
@@ -353,7 +370,16 @@ public class NetLoadActivity extends AppCompatActivity {
             }
         }
 
-        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE).show();
+        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE)
+                .setTextColor(Color.GREEN)
+                .setAction("Close", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                })
+                .show();
+
 
     }
 
