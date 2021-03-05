@@ -26,6 +26,9 @@ import java.io.InputStreamReader;
 
 public class LocalParserActivity extends AppCompatActivity {
 
+    private static final String TYPE = "MyTest";
+    private static final String PLAY_DATA = "data/MyTest.json";
+
     private LinearLayout mLinearLayout;
 
     private VafContext sVafContext;
@@ -50,8 +53,8 @@ public class LocalParserActivity extends AppCompatActivity {
 
     private void loadTemplates(byte... bytes) {
         sViewManager.loadBinBufferSync(bytes);
-        JSONObject json = getJSONDataFromAsset("data/MyTest.json");
-        preview("MyTest", json);
+        JSONObject json = getJSONDataFromAsset(PLAY_DATA);
+        preview(TYPE, json);
     }
 
     private void preview(String templateName, JSONObject jsonData) {

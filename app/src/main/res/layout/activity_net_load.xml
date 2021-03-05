@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.NetLoadActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_load_template"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Load Template"
+        app:layout_constraintBottom_toTopOf="@id/btn_add_template_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add_template_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Add Template View"
+        app:layout_constraintBottom_toTopOf="@id/ns_container"
+        app:layout_constraintEnd_toStartOf="@id/btn_load_data"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/btn_load_template"
+        app:layout_constraintTop_toBottomOf="@id/btn_load_template" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_load_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="Load Data Show Template"
+        app:layout_constraintBottom_toBottomOf="@id/btn_add_template_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_add_template_view"
+        app:layout_constraintTop_toTopOf="@id/btn_add_template_view" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/ns_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#999"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_template_view"
+        tools:context=".ui.RealtimeDetailActivity">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

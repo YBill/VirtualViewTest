@@ -113,6 +113,7 @@ public class RealtimeDetailActivity extends AppCompatActivity {
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
+                    Utils.toast("Server is not running!");
                 }
 
             }

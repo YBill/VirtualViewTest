@@ -6,8 +6,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bill.virtualviewtest.ui.RealtimeListActivity;
 import com.bill.virtualviewtest.ui.LocalParserActivity;
+import com.bill.virtualviewtest.ui.NetLoadActivity;
+import com.bill.virtualviewtest.ui.RealtimeListActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,5 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void handleRealtime(View view) {
         startActivity(new Intent(this, RealtimeListActivity.class));
+    }
+
+    public void handleNet(View view) {
+        startActivity(new Intent(this, NetLoadActivity.class));
     }
 }

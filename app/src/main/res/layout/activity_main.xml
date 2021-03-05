@@ -19,4 +19,11 @@
         android:onClick="handleRealtime"
         android:text="实时加载" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="handleNet"
+        android:text="模拟网络加载" />
+
+
 </LinearLayout>
