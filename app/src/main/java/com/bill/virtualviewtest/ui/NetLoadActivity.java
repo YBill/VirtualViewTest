@@ -12,6 +12,7 @@ import com.bill.virtualviewtest.MyApplication;
 import com.bill.virtualviewtest.R;
 import com.bill.virtualviewtest.util.ThreadUtils;
 import com.bill.virtualviewtest.util.Utils;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.tmall.wireless.vaf.framework.VafContext;
 import com.tmall.wireless.vaf.framework.ViewManager;
@@ -122,7 +123,39 @@ public class NetLoadActivity extends AppCompatActivity {
             }
         }
 
-        Utils.toast("Total " + length + ", success " + mLoadTemplateMap.size());
+        // Toast
+
+        StringBuilder builder = new StringBuilder("(1) ");
+        builder.append("Total：");
+        builder.append("[ ");
+        for (int i = 0; i < length; i++) {
+            TemplateBean.Template template = templates.get(i);
+            builder.append(template.name);
+            if (i == length - 1) {
+                builder.append(" ]");
+            } else
+                builder.append("，");
+        }
+
+        builder.append("\n");
+        builder.append("Success：");
+        builder.append("[ ");
+        if (mLoadTemplateMap.isEmpty()) {
+            builder.append(" ]");
+        } else {
+            int i = 0;
+            for (String key : mLoadTemplateMap.keySet()) {
+                builder.append(key);
+                if (i == length - 1) {
+                    builder.append(" ]");
+                } else
+                    builder.append("，");
+                i++;
+            }
+        }
+
+        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE).show();
+
     }
 
     /////////////
@@ -171,11 +204,9 @@ public class NetLoadActivity extends AppCompatActivity {
         int length = templateNameList.size();
 
         mLinearLayout.removeAllViews();
-        List<String> loadFailList = new ArrayList<>(length);
 
         for (String templateName : templateNameList) {
             if (!mLoadTemplateMap.containsKey(templateName)) {
-                loadFailList.add(templateName);
                 continue;
             }
 
@@ -193,8 +224,38 @@ public class NetLoadActivity extends AppCompatActivity {
             mTemplateViewMap.put(templateName, mTemplateView);
         }
 
-        String msg = "Total " + length + ", success " + (length - loadFailList.size());
-        Utils.toast(msg);
+        // Toast
+
+        StringBuilder builder = new StringBuilder("(2) ");
+        builder.append("Total：");
+        builder.append("[ ");
+        for (int i = 0; i < length; i++) {
+            String template = templateNameList.get(i);
+            builder.append(template);
+            if (i == length - 1) {
+                builder.append(" ]");
+            } else
+                builder.append("，");
+        }
+
+        builder.append("\n");
+        builder.append("Success：");
+        builder.append("[ ");
+        if (mTemplateViewMap.isEmpty()) {
+            builder.append(" ]");
+        } else {
+            int i = 0;
+            for (String key : mTemplateViewMap.keySet()) {
+                builder.append(key);
+                if (i == length - 1) {
+                    builder.append(" ]");
+                } else
+                    builder.append("，");
+                i++;
+            }
+        }
+
+        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE).show();
 
     }
 
@@ -243,14 +304,15 @@ public class NetLoadActivity extends AppCompatActivity {
         }
 
         int length = list.size();
-        List<String> loadFailList = new ArrayList<>(length);
+        List<String> loadSuccessList = new ArrayList<>(length);
 
         for (DataBean.Data data : list) {
             View view = mTemplateViewMap.get(data.template_name);
             if (view == null) {
-                loadFailList.add(data.template_name);
                 continue;
             }
+
+            loadSuccessList.add(data.template_name);
 
             IContainer iContainer = (IContainer) view;
             try {
@@ -261,8 +323,38 @@ public class NetLoadActivity extends AppCompatActivity {
             }
         }
 
-        String msg = "Total " + length + ", success " + (length - loadFailList.size());
-        Utils.toast(msg);
+        // Toast
+
+        StringBuilder builder = new StringBuilder("(3) ");
+        builder.append("Total：");
+        builder.append("[ ");
+        for (int i = 0; i < length; i++) {
+            DataBean.Data data = list.get(i);
+            builder.append(data.template_name);
+            if (i == length - 1) {
+                builder.append(" ]");
+            } else
+                builder.append("，");
+        }
+
+        builder.append("\n");
+        builder.append("Success：");
+        builder.append("[ ");
+        if (loadSuccessList.isEmpty()) {
+            builder.append(" ]");
+        } else {
+            for (int i = 0; i < loadSuccessList.size(); i++) {
+                String name = loadSuccessList.get(i);
+                builder.append(name);
+                if (i == length - 1) {
+                    builder.append(" ]");
+                } else
+                    builder.append("，");
+            }
+        }
+
+        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE).show();
+
     }
 
     /////////////////
