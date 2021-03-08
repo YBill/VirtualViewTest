@@ -57,7 +57,7 @@ public class LocalParserOutActivity extends AppCompatActivity {
         sViewManager.loadBinBufferSync(b);
 
         // 加载不出来
-        sViewManager.loadBinFileSync("file:///android_asset/template/MyTest.out");
+//        sViewManager.loadBinFileSync("file:///android_asset/template/MyTest.out");
     }
 
     private void preview(String templateName, JSONObject jsonData) {
