@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bill.virtualviewtest.ui.LocalParserActivity;
+import com.bill.virtualviewtest.ui.LocalLoadActivity;
 import com.bill.virtualviewtest.ui.NetLoadActivity;
 import com.bill.virtualviewtest.ui.RealtimeListActivity;
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleLocal(View view) {
-        startActivity(new Intent(this, LocalParserActivity.class));
+        startActivity(new Intent(this, LocalLoadActivity.class));
 
     }
 

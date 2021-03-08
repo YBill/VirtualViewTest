@@ -24,16 +24,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class LocalParserActivity extends AppCompatActivity {
+public class LocalParserBytesActivity extends AppCompatActivity {
 
-    private static final String TYPE = "MyTest";
-    private static final String PLAY_DATA = "data/MyTest.json";
+    private static final String NAME = "MyTest";
+    private static final byte[] TEMPLATE = MYTEST.BIN;
+    private static final String DATA = "data/MyTest.json";
 
     private LinearLayout mLinearLayout;
 
     private VafContext sVafContext;
     private ViewManager sViewManager;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +48,13 @@ public class LocalParserActivity extends AppCompatActivity {
     }
 
     private void load() {
-        loadTemplates(MYTEST.BIN);
+        loadTemplates(TEMPLATE);
+        JSONObject json = getJSONDataFromAsset(DATA);
+        preview(NAME, json);
     }
 
     private void loadTemplates(byte... bytes) {
         sViewManager.loadBinBufferSync(bytes);
-        JSONObject json = getJSONDataFromAsset(PLAY_DATA);
-        preview(TYPE, json);
     }
 
     private void preview(String templateName, JSONObject jsonData) {
