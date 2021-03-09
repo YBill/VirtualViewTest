@@ -20,6 +20,7 @@ import com.bill.virtualviewtest.R;
 import com.bill.virtualviewtest.util.HttpUtil;
 import com.bill.virtualviewtest.util.ThreadUtils;
 import com.bill.virtualviewtest.util.Utils;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -41,7 +42,18 @@ public class RealtimeListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtime_list);
         initView();
+        initFloatBtn();
         getListData();
+    }
+
+    private void initFloatBtn() {
+        FloatingActionButton button = findViewById(R.id.float_btn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RealtimeListActivity.this, RealtimeListLoadActivity.class));
+            }
+        });
     }
 
     @Override

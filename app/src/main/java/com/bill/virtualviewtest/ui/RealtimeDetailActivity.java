@@ -153,7 +153,7 @@ public class RealtimeDetailActivity extends AppCompatActivity {
         return HttpUtil.getHostUrl() + name + "/data.json";
     }
 
-    private static class PreviewData implements Serializable {
+    public static class PreviewData implements Serializable {
 
         ArrayList<String> templates;
         JsonObject data;
