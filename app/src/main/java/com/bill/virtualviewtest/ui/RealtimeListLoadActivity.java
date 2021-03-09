@@ -3,7 +3,8 @@ package com.bill.virtualviewtest.ui;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Base64;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -26,7 +27,6 @@ import com.tmall.wireless.vaf.virtualview.core.Layout;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -52,7 +52,24 @@ public class RealtimeListLoadActivity extends AppCompatActivity {
         getListData();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_preview, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_refresh:
+                getListData();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void getListData() {
+        mLinearLayout.removeAllViews();
         ThreadUtils.runOnWork(new Runnable() {
             @Override
             public void run() {
@@ -96,10 +113,6 @@ public class RealtimeListLoadActivity extends AppCompatActivity {
         }
 
         Collections.sort(list);
-
-        for (String s : list) {
-            Log.e("Bill", s);
-        }
 
         return list;
     }
@@ -171,15 +184,5 @@ public class RealtimeListLoadActivity extends AppCompatActivity {
 
         mLinearLayout.addView(mContainer, marginLayoutParams);
     }
-
-    private final Comparator<String> COMPARATOR = new Comparator<String>() {
-        @Override
-        public int compare(String o1, String o2) {
-            int r = o1.compareTo(o2);
-            Log.d("Bill", o1 + "-" + o2 + "," + r);
-            return r;
-        }
-    };
-
 
 }
