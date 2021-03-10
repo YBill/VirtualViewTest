@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ShapedImageView">
+        <attr name="round_radius_left_top" format="dimension" />
+        <attr name="round_radius_right_top" format="dimension" />
+        <attr name="round_radius_right_bottom" format="dimension" />
+        <attr name="round_radius_left_bottom" format="dimension" />
+        <attr name="round_radius" format="dimension" />
+        <attr name="img_border_width" format="dimension" />
+        <attr name="img_border_color" format="color" />
+        <attr name="shape_mode" format="enum">
+            <enum name="none" value="0" />
+            <enum name="round_rect" value="1" />
+            <enum name="circle" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

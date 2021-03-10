@@ -29,8 +29,8 @@ public class NetImage extends ViewBase {
         mNetImageView = new NetImageView(context.forViewConstruction());
 
         StringSupport mStringSupport = context.getStringLoader();
-        degreeId = mStringSupport.getStringId("degree", false);
-        urlId = mStringSupport.getStringId("url", false);
+        degreeId = mStringSupport.getStringId(CustomKey.NET_IMAGE_ATTRS_DEGREE, false);
+        urlId = mStringSupport.getStringId(CustomKey.NET_IMAGE_ATTRS_URL, false);
     }
 
     @Override
@@ -80,7 +80,7 @@ public class NetImage extends ViewBase {
         boolean ret = true;
         if (key == degreeId) {
             if (Utils.isEL(stringValue)) {
-                mViewCache.put(this, degreeId, stringValue, ViewCache.Item.TYPE_INT);
+                mViewCache.put(this, degreeId, stringValue, ViewCache.Item.TYPE_FLOAT);
             }
         } else if (key == urlId) {
             if (Utils.isEL(stringValue)) {

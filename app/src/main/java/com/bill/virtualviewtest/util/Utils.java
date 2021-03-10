@@ -1,6 +1,7 @@
 package com.bill.virtualviewtest.util;
 
 import android.os.Looper;
+import android.util.TypedValue;
 import android.widget.Toast;
 
 import com.bill.virtualviewtest.MyApplication;
@@ -27,6 +28,10 @@ public class Utils {
 
     private static void realToast(String text) {
         Toast.makeText(MyApplication.mContext, text, Toast.LENGTH_SHORT).show();
+    }
+
+    public static float dp2Px(float dp) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, MyApplication.mContext.getResources().getDisplayMetrics());
     }
 
 }

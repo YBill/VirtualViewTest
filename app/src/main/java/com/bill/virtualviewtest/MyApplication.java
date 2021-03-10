@@ -18,7 +18,9 @@ import com.tmall.wireless.vaf.virtualview.view.image.ImageBase;
 import java.util.HashMap;
 import java.util.Map;
 
+import custom.CustomKey;
 import custom.NetImage;
+import custom.ShapeImage;
 
 /**
  * author : Bill
@@ -70,7 +72,8 @@ public class MyApplication extends Application {
         });
         sViewManager = sVafContext.getViewManager();
         sViewManager.init(getApplicationContext());
-        sViewManager.getViewFactory().registerBuilder(1100, new NetImage.Builder());
+        sViewManager.getViewFactory().registerBuilder(CustomKey.NET_IMAGE_ID, new NetImage.Builder());
+        sViewManager.getViewFactory().registerBuilder(CustomKey.SHAPE_IMAGE_ID, new ShapeImage.Builder());
 
     }
 
