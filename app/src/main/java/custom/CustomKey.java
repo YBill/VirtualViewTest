@@ -10,6 +10,7 @@ public class CustomKey {
     public static final int NET_IMAGE_ID = 1100;
     public static final String NET_IMAGE_ATTRS_DEGREE = "degree";
     public static final String NET_IMAGE_ATTRS_URL = "url";
+    public static final String NET_IMAGE_ATTRS_LOCAL_RES = "localRes";
 
     public static final int SHAPE_IMAGE_ID = 1101;
     public static final String SHAPE_IMAGE_ATTRS_SHAPE_MODE = "shapeMode";

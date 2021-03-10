@@ -12,17 +12,17 @@ import com.tmall.wireless.vaf.virtualview.core.IView;
  * date : 2021/3/10
  * description :
  */
-public class NetImageView extends androidx.appcompat.widget.AppCompatImageView implements IView {
+public class LocalAndNetImageView extends androidx.appcompat.widget.AppCompatImageView implements IView {
 
-    public NetImageView(Context context) {
+    public LocalAndNetImageView(Context context) {
         super(context);
     }
 
-    public NetImageView(Context context, @Nullable AttributeSet attrs) {
+    public LocalAndNetImageView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public NetImageView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public LocalAndNetImageView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

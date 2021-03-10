@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import custom.CustomKey;
-import custom.NetImage;
+import custom.LocalAndNetNetImage;
 import custom.ShapeImage;
 
 /**
@@ -72,7 +72,7 @@ public class MyApplication extends Application {
         });
         sViewManager = sVafContext.getViewManager();
         sViewManager.init(getApplicationContext());
-        sViewManager.getViewFactory().registerBuilder(CustomKey.NET_IMAGE_ID, new NetImage.Builder());
+        sViewManager.getViewFactory().registerBuilder(CustomKey.NET_IMAGE_ID, new LocalAndNetNetImage.Builder());
         sViewManager.getViewFactory().registerBuilder(CustomKey.SHAPE_IMAGE_ID, new ShapeImage.Builder());
 
     }
