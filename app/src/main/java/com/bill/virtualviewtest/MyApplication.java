@@ -18,6 +18,8 @@ import com.tmall.wireless.vaf.virtualview.view.image.ImageBase;
 import java.util.HashMap;
 import java.util.Map;
 
+import custom.NetImage;
+
 /**
  * author : Bill
  * date : 2021/3/3
@@ -68,6 +70,7 @@ public class MyApplication extends Application {
         });
         sViewManager = sVafContext.getViewManager();
         sViewManager.init(getApplicationContext());
+        sViewManager.getViewFactory().registerBuilder(1100, new NetImage.Builder());
 
     }
 
