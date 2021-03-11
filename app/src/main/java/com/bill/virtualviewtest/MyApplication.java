@@ -21,6 +21,7 @@ import java.util.Map;
 import custom.CustomKey;
 import custom.LocalAndNetNetImage;
 import custom.ShapeImage;
+import custom.TagText;
 
 /**
  * author : Bill
@@ -44,7 +45,14 @@ public class MyApplication extends Application {
         sVafContext.setImageLoaderAdapter(new ImageLoader.IImageLoaderAdapter() {
             @Override
             public void bindImage(String uri, ImageBase imageBase, int reqWidth, int reqHeight) {
-                RequestBuilder requestBuilder = Glide.with(mContext).asBitmap().load(uri);
+                RequestBuilder requestBuilder;
+                if (uri.startsWith("http")) {
+                    requestBuilder = Glide.with(mContext).asBitmap().load(uri);
+                } else {
+                    int id = mContext.getResources().getIdentifier(uri, "drawable", mContext.getPackageName());
+                    requestBuilder = Glide.with(mContext).asBitmap().load(id);
+                }
+
                 if (reqHeight > 0 || reqWidth > 0) {
                     requestBuilder.submit(reqWidth, reqHeight);
                 }
@@ -54,7 +62,14 @@ public class MyApplication extends Application {
 
             @Override
             public void getBitmap(String uri, int reqWidth, int reqHeight, ImageLoader.Listener lis) {
-                RequestBuilder requestBuilder = Glide.with(mContext).asBitmap().load(uri);
+                RequestBuilder requestBuilder;
+                if (uri.startsWith("http")) {
+                    requestBuilder = Glide.with(mContext).asBitmap().load(uri);
+                } else {
+                    int id = mContext.getResources().getIdentifier(uri, "drawable", mContext.getPackageName());
+                    requestBuilder = Glide.with(mContext).asBitmap().load(id);
+                }
+
                 if (reqHeight > 0 || reqWidth > 0) {
                     requestBuilder.submit(reqWidth, reqHeight);
                 }
@@ -74,6 +89,7 @@ public class MyApplication extends Application {
         sViewManager.init(getApplicationContext());
         sViewManager.getViewFactory().registerBuilder(CustomKey.NET_IMAGE_ID, new LocalAndNetNetImage.Builder());
         sViewManager.getViewFactory().registerBuilder(CustomKey.SHAPE_IMAGE_ID, new ShapeImage.Builder());
+        sViewManager.getViewFactory().registerBuilder(CustomKey.TAG_TEXT_ID, new TagText.Builder());
 
     }
 

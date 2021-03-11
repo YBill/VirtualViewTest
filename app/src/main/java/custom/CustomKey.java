@@ -24,4 +24,7 @@ public class CustomKey {
     public final static int SHAPE_MODE_ROUND_RECT = 1;
     public final static int SHAPE_MODE_CIRCLE = 2;
 
+    public static final int TAG_TEXT_ID = 1102;
+    public static final String TAG_TEXT_ATTRS_TAG = "tag";
+
 }
