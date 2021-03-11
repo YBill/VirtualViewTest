@@ -46,7 +46,7 @@ public class MyApplication extends Application {
             @Override
             public void bindImage(String uri, ImageBase imageBase, int reqWidth, int reqHeight) {
                 RequestBuilder requestBuilder;
-                if (uri.startsWith("http")) {
+                if (uri == null || uri.startsWith("http")) {
                     requestBuilder = Glide.with(mContext).asBitmap().load(uri);
                 } else {
                     int id = mContext.getResources().getIdentifier(uri, "drawable", mContext.getPackageName());
@@ -63,7 +63,7 @@ public class MyApplication extends Application {
             @Override
             public void getBitmap(String uri, int reqWidth, int reqHeight, ImageLoader.Listener lis) {
                 RequestBuilder requestBuilder;
-                if (uri.startsWith("http")) {
+                if (uri == null || uri.startsWith("http")) {
                     requestBuilder = Glide.with(mContext).asBitmap().load(uri);
                 } else {
                     int id = mContext.getResources().getIdentifier(uri, "drawable", mContext.getPackageName());
