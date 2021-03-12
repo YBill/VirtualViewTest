@@ -4,15 +4,14 @@ import android.app.Application;
 import android.content.Context;
 
 import com.bill.virtualviewtest.auxiliary.ImageTarget;
-import com.bill.virtualviewtest.util.Utils;
+import com.bill.virtualviewtest.event.ClickProcessorImpl;
+import com.bill.virtualviewtest.event.ExposureProcessorImpl;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.tmall.wireless.vaf.framework.VafContext;
 import com.tmall.wireless.vaf.framework.ViewManager;
 import com.tmall.wireless.vaf.virtualview.Helper.ImageLoader;
-import com.tmall.wireless.vaf.virtualview.event.EventData;
 import com.tmall.wireless.vaf.virtualview.event.EventManager;
-import com.tmall.wireless.vaf.virtualview.event.IEventProcessor;
 import com.tmall.wireless.vaf.virtualview.view.image.ImageBase;
 
 import java.util.HashMap;
@@ -77,14 +76,10 @@ public class MyApplication extends Application {
                 requestBuilder.into(imageTarget);
             }
         });
-        sVafContext.getEventManager().register(EventManager.TYPE_Click, new IEventProcessor() {
-            @Override
-            public boolean process(EventData data) {
-                String action = data.mVB.getAction();
-                Utils.toast(action);
-                return true;
-            }
-        });
+        sVafContext.getEventManager().register(EventManager.TYPE_Click, new ClickProcessorImpl());
+        sVafContext.getEventManager().register(EventManager.TYPE_Exposure, new ClickProcessorImpl());
+        sVafContext.getEventManager().register(EventManager.TYPE_Exposure, new ExposureProcessorImpl());
+
         sViewManager = sVafContext.getViewManager();
         sViewManager.init(getApplicationContext());
         sViewManager.getViewFactory().registerBuilder(CustomKey.NET_IMAGE_ID, new LocalAndNetNetImage.Builder());
