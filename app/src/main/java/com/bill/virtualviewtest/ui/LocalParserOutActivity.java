@@ -1,5 +1,6 @@
 package com.bill.virtualviewtest.ui;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -53,10 +55,27 @@ public class LocalParserOutActivity extends AppCompatActivity {
     }
 
     private void loadTemplates(String template) {
-        byte[] b = getTemplateFromAsset(template);
-        sViewManager.loadBinBufferSync(b);
+        File file = getApplicationContext().getExternalFilesDir(TEMPLATE);
+        if (file != null) {
+            String path = file.getAbsolutePath();
+            int ret = sViewManager.loadBinFileSync(path);
+            if (ret > 0) {
+                Utils.bottomToast(mLinearLayout, "Load with " + path, Color.GREEN);
+                return;
+            }
+        }
 
-        // 加载不出来
+
+        byte[] b = getTemplateFromAsset(template);
+        int ret = sViewManager.loadBinBufferSync(b);
+        if (ret > 0) {
+            Utils.bottomToast(mLinearLayout, "Load with assets/" + template, Color.YELLOW);
+            return;
+        }
+
+        Utils.bottomToast(mLinearLayout, "Load failed", Color.RED);
+
+        // 加载不出来，看loadBinFileSync内部源码其内部是通过读本地文件的，不是读assets中的文件
 //        sViewManager.loadBinFileSync("file:///android_asset/template/MyTest.out");
     }
 

@@ -13,7 +13,6 @@ import com.bill.virtualviewtest.MyApplication;
 import com.bill.virtualviewtest.R;
 import com.bill.virtualviewtest.util.ThreadUtils;
 import com.bill.virtualviewtest.util.Utils;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.tmall.wireless.vaf.framework.VafContext;
 import com.tmall.wireless.vaf.framework.ViewManager;
@@ -155,15 +154,7 @@ public class NetLoadActivity extends AppCompatActivity {
             }
         }
 
-        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE)
-                .setTextColor(Color.RED)
-                .setAction("Close", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                })
-                .show();
+        Utils.bottomToast(mLinearLayout, builder, Color.RED);
 
     }
 
@@ -264,15 +255,7 @@ public class NetLoadActivity extends AppCompatActivity {
             }
         }
 
-        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE)
-                .setTextColor(Color.YELLOW)
-                .setAction("Close", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                })
-                .show();
+        Utils.bottomToast(mLinearLayout, builder, Color.YELLOW);
 
     }
 
@@ -370,16 +353,7 @@ public class NetLoadActivity extends AppCompatActivity {
             }
         }
 
-        Snackbar.make(mLinearLayout, builder, Snackbar.LENGTH_INDEFINITE)
-                .setTextColor(Color.GREEN)
-                .setAction("Close", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                })
-                .show();
-
+        Utils.bottomToast(mLinearLayout, builder, Color.GREEN);
 
     }
 
