@@ -8,12 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.bill.virtualviewtest.MyApplication;
 import com.bill.virtualviewtest.R;
+import com.bill.virtualviewtest.base.BaseActivity;
 import com.bill.virtualviewtest.util.HttpUtil;
 import com.bill.virtualviewtest.util.ThreadUtils;
 import com.bill.virtualviewtest.util.Utils;
@@ -33,7 +32,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class RealtimeListLoadActivity extends AppCompatActivity {
+public class RealtimeListLoadActivity extends BaseActivity {
 
     private VafContext sVafContext;
     private ViewManager sViewManager;

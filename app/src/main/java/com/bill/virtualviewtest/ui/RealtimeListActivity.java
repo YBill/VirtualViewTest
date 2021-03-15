@@ -10,13 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bill.virtualviewtest.R;
+import com.bill.virtualviewtest.base.BaseActivity;
 import com.bill.virtualviewtest.util.HttpUtil;
 import com.bill.virtualviewtest.util.ThreadUtils;
 import com.bill.virtualviewtest.util.Utils;
@@ -32,7 +32,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class RealtimeListActivity extends AppCompatActivity {
+public class RealtimeListActivity extends BaseActivity {
 
     private RecyclerView mRv;
     private ListAdapter mAdapter;

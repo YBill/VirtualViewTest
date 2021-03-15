@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.bill.virtualviewtest.base.BaseActivity;
 import com.bill.virtualviewtest.ui.LocalLoadActivity;
 import com.bill.virtualviewtest.ui.NetLoadActivity;
 import com.bill.virtualviewtest.ui.RealtimeListActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

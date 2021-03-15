@@ -4,11 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.bill.virtualviewtest.R;
+import com.bill.virtualviewtest.base.BaseActivity;
 
-public class LocalLoadActivity extends AppCompatActivity {
+public class LocalLoadActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".web.DetailActivity" />
         <activity android:name=".ui.RealtimeListLoadActivity" />
         <activity android:name=".ui.LocalParserOutActivity" />
         <activity android:name=".ui.LocalParserMd5StrActivity" />

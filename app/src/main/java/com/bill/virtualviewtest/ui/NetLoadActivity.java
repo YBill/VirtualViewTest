@@ -6,11 +6,11 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.bill.virtualviewtest.MyApplication;
 import com.bill.virtualviewtest.R;
+import com.bill.virtualviewtest.base.BaseActivity;
 import com.bill.virtualviewtest.util.ThreadUtils;
 import com.bill.virtualviewtest.util.Utils;
 import com.google.gson.Gson;
@@ -32,7 +32,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class NetLoadActivity extends AppCompatActivity {
+public class NetLoadActivity extends BaseActivity {
 
     private LinearLayout mLinearLayout;
     private AppCompatButton loadTemplateBtn;

@@ -6,10 +6,9 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.bill.virtualviewtest.MyApplication;
 import com.bill.virtualviewtest.R;
+import com.bill.virtualviewtest.base.BaseActivity;
 import com.bill.virtualviewtest.bytes.MYTEST;
 import com.bill.virtualviewtest.util.Utils;
 import com.tmall.wireless.vaf.framework.VafContext;
@@ -25,7 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class LocalParserMd5StrActivity extends AppCompatActivity {
+public class LocalParserMd5StrActivity extends BaseActivity {
 
     private static final String NAME = "MyTest";
     private static final String TEMPLATE = MYTEST.STR;
