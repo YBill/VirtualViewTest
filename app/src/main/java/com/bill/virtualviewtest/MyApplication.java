@@ -6,6 +6,7 @@ import android.content.Context;
 import com.bill.virtualviewtest.auxiliary.ImageTarget;
 import com.bill.virtualviewtest.event.ClickProcessorImpl;
 import com.bill.virtualviewtest.event.ExposureProcessorImpl;
+import com.bill.virtualviewtest.event.LongClickProcessorImpl;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.tmall.wireless.vaf.framework.VafContext;
@@ -77,8 +78,8 @@ public class MyApplication extends Application {
             }
         });
         sVafContext.getEventManager().register(EventManager.TYPE_Click, new ClickProcessorImpl());
-        sVafContext.getEventManager().register(EventManager.TYPE_Exposure, new ClickProcessorImpl());
         sVafContext.getEventManager().register(EventManager.TYPE_Exposure, new ExposureProcessorImpl());
+        sVafContext.getEventManager().register(EventManager.TYPE_LongCLick, new LongClickProcessorImpl());
 
         sViewManager = sVafContext.getViewManager();
         sViewManager.init(getApplicationContext());
